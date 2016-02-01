@@ -1,6 +1,6 @@
 require 'spec_helper.rb'
 
-module Dk_codebreaker
+module DkCodebreaker
   shared_context "start game" do
     let(:game) { Game.new }
 
