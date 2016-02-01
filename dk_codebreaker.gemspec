@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Den Key"]
   spec.email         = ["denis.kriukov@aol.com"]
 
-  spec.summary       = %q{dk_codebreaker game gem.}
+  spec.summary       = %q{dk_codebreaker is a logic game.}
   spec.description   = %q{Dk_Codebreaker is a logic game in which a code-breaker tries to break a secret code created by a code-maker.
                           The code-maker, which will be played by the application we’re going to write, 
                           creates a secret code of four numbers between 1 and 6.}
