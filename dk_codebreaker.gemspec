@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Dk_Codebreaker is a logic game in which a code-breaker tries to break a secret code created by a code-maker.
                           The code-maker, which will be played by the application we’re going to write, 
                           creates a secret code of four numbers between 1 and 6.}
-  spec.homepage      = "https://github.com/KrDenis"
+  spec.homepage      = "https://github.com/KrDenis/dk_codebreaker"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
