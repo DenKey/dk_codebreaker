@@ -26,15 +26,12 @@ Or install it yourself as:
 
 ```ruby
 # create game instace, it get user name and attempts
-
 game = DkCodebreaker::Game.new(name,attempts)
 
-# this will generete Code
-
+# mandatory run, this will generate secret code
 game.start
 
-# set attempts score to nil and regenerate Code
-
+# set attempts score to nil and regenerate it
 game.restart
 
 # enter user answer as string
@@ -43,19 +40,13 @@ game.restart
 ### :guess_has_symbol
 ### :code_not_string
 ### :you_lose
-
 game.guess user_code
 
-# return [hint String]
- 
+# return [hint String] 
 game.hint
 
 # Return data about user in format [name,attempts used,attempts count, date]
-
 game.user_data
-
-
-
 ```
 
 ## Contributing
