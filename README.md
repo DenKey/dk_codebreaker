@@ -35,7 +35,9 @@ game.start
 game.restart
 
 # enter user answer as string
-# Return [position_number String] or error code:
+# Return [position_number String]
+# Win if you get "++++" here 
+# Error codes:
 ### :less_then_four
 ### :guess_has_symbol
 ### :code_not_string
@@ -45,12 +47,14 @@ game.guess user_code
 # return [hint String] 
 game.hint
 
-# Return data about user in format [name,attempts used,attempts count, date]
+# Return data about user in format [last_result,name,attempts used,attempts count, date]
 game.user_data
 
-# Getters
+# Getters and Setters 
 game.hint_status
 game.attempt
+game.player
+game.player=
 ```
 
 ## Contributing

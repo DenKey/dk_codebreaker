@@ -11,6 +11,7 @@ module DkCodebreaker
       @attempt = 1
       @hint_status = false
       @limit = attempts
+      @last_result = nil
     end
 
     def start
@@ -33,7 +34,7 @@ module DkCodebreaker
           submit_code.each_char { |x| return :guess_has_symbol if numeric?(x) != 0 }
           @submit_code = submit_code
           @attempt += 1
-          numbers_eq(position_eq) 
+          @last_result = numbers_eq(position_eq) 
         else
           :code_not_string
         end
@@ -53,7 +54,7 @@ module DkCodebreaker
     end
 
     def user_data
-      [@player, @attempt, @limit, Time.new.strftime("%m/%d/%Y/%H/%M")]
+      [@last_result, @player, @attempt, @limit, Time.new.strftime("%m/%d/%Y/%H/%M")]
     end
 
     private
