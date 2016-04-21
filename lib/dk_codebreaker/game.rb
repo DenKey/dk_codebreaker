@@ -27,7 +27,7 @@ module DkCodebreaker
     end
 
     def guess submit_code
-      if @attempt <= @limit
+      if @attempt < @limit
         if submit_code.is_a? String
           return :less_then_four   if submit_code.size < 4
           submit_code = submit_code[0,4] if submit_code.size > 4
