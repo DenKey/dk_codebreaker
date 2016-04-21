@@ -47,6 +47,10 @@ game.hint
 
 # Return data about user in format [name,attempts used,attempts count, date]
 game.user_data
+
+# Getters
+game.hint_status
+game.attempt
 ```
 
 ## Contributing

@@ -2,6 +2,7 @@ module DkCodebreaker
   class Game
     attr_reader :hint_status
     attr_reader :attempt
+    attr_accessor :player
 
     def initialize player = nil, attempts = 10
       @submit_code = nil
