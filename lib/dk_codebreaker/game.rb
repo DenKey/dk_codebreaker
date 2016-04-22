@@ -1,7 +1,7 @@
 module DkCodebreaker
   class Game
     attr_reader :hint_status, :attempt
-    attr_accessor :player
+    attr_accessor :player, :attempts
 
     def initialize player = nil, attempts = 10
       @submit_code = nil
@@ -9,7 +9,7 @@ module DkCodebreaker
       @player = player
       @attempt = 1
       @hint_status = false
-      @limit = attempts
+      @attempts = attempts
       @last_result = nil
     end
 
@@ -26,7 +26,7 @@ module DkCodebreaker
     end
 
     def guess submit_code
-      if @attempt < @limit
+      if @attempt < @attempts
         if submit_code.is_a? String
           return :less_then_four   if submit_code.size < 4
           submit_code = submit_code[0,4] if submit_code.size > 4
@@ -57,7 +57,7 @@ module DkCodebreaker
           player: @player,
           result: @last_result,
           attempt: @attempt,
-          attempts: @limit,
+          attempts: @attempts,
           time: Time.new.strftime("%m/%d/%Y/%H/%M")
       }
     end

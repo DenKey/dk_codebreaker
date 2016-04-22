@@ -60,6 +60,8 @@ game.hint_status
 game.attempt
 game.player
 game.player=
+game.attempts
+game.attempts=
 ```
 
 
