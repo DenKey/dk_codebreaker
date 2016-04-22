@@ -65,6 +65,7 @@ game.player=
 
 ## Implementations
 [codebreaker_console](https://github.com/DenKey/codebreaker_console)
+
 [codebreaker_web](https://github.com/DenKey/codebreaker_web)
 
 ## Contributing
