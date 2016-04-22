@@ -22,7 +22,7 @@ Or install it yourself as:
 
     $ gem install dk_codebreaker
 
-## Usage
+## Quick documentation
 
 ```ruby
 # create game instace, it get user name and attempts
@@ -47,7 +47,12 @@ game.guess user_code
 # return [hint String] 
 game.hint
 
-# Return data about user in format [last_result,name,attempts used,attempts count, date]
+# Return Hash with user data {player,result,attempt,attempts,time}
+# :player   - username
+# :result   - last game result
+# :attempt  - current attempt number
+# :attempts - limitation of trying
+# :time     - "%m/%d/%Y/%H/%M"
 game.user_data
 
 # Getters and Setters 
@@ -57,9 +62,14 @@ game.player
 game.player=
 ```
 
+
+## Implementations
+[codebreaker_console](https://github.com/DenKey/codebreaker_console)
+[codebreaker_web](https://github.com/DenKey/codebreaker_web)
+
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/KrDenis/dk_codebreaker
+Bug reports and pull requests are welcome on GitHub at https://github.com/DenKey/dk_codebreaker
 
 
 ## License

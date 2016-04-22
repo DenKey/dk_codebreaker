@@ -1,7 +1,6 @@
 module DkCodebreaker
   class Game
-    attr_reader :hint_status
-    attr_reader :attempt
+    attr_reader :hint_status, :attempt
     attr_accessor :player
 
     def initialize player = nil, attempts = 10
@@ -54,7 +53,13 @@ module DkCodebreaker
     end
 
     def user_data
-      [@last_result, @player, @attempt, @limit, Time.new.strftime("%m/%d/%Y/%H/%M")]
+      {
+          player: @player,
+          result: @last_result,
+          attempt: @attempt,
+          attempts: @limit,
+          time: Time.new.strftime("%m/%d/%Y/%H/%M")
+      }
     end
 
     private
