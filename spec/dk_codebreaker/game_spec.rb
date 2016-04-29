@@ -3,10 +3,6 @@ require 'spec_helper.rb'
 module DkCodebreaker
   shared_context "start game" do
     let(:game) { Game.new }
-
-    before do
-      game.start
-    end
   end
   describe Game do
     include_context "start game"

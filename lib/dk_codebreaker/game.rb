@@ -11,10 +11,7 @@ module DkCodebreaker
       @hint_status = false
       @attempts = attempts
       @last_result = nil
-    end
-
-    def start
-      1.upto(4) { @secret_code << "#{rand(1..6)}" }
+      generate_code
     end
 
     def restart
@@ -22,7 +19,7 @@ module DkCodebreaker
       @submit_code = nil
       @secret_code = ""
       @hint_status = false
-      start
+      generate_code
     end
 
     def guess submit_code
@@ -63,6 +60,10 @@ module DkCodebreaker
     end
 
     private
+
+    def generate_code
+      1.upto(4) { @secret_code << "#{rand(1..6)}" }
+    end
 
     def position_eq
       submits = @submit_code.split("")
