@@ -25,7 +25,7 @@ Or install it yourself as:
 ## Quick documentation
 
 ```ruby
-# create game instace, it get user name and attempts
+# create game instance, it get user name and attempts
 game = DkCodebreaker::Game.new(name,attempts)
 
 # mandatory run, this will generate secret code

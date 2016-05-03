@@ -20,7 +20,7 @@ module DkCodebreaker
     end
 
     context "#guess" do
-      it "answer submited" do
+      it "answer submitted" do
         game.guess "6776"
         expect(game.instance_variable_get(:@submit_code)).to eq("6776")
       end

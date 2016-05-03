@@ -3,9 +3,9 @@ module DkCodebreaker
     attr_reader :hint_status, :attempt
     attr_accessor :player, :attempts
 
-    def initialize player = nil, attempts = 10
+    def initialize(player = nil, attempts = 10)
       @submit_code = nil
-      @secret_code = ""
+      @secret_code = ''
       @player = player
       @attempt = 1
       @hint_status = false
@@ -17,12 +17,12 @@ module DkCodebreaker
     def restart
       @attempt = 1
       @submit_code = nil
-      @secret_code = ""
+      @secret_code = ''
       @hint_status = false
       generate_code
     end
 
-    def guess submit_code
+    def guess(submit_code)
       if @attempt < @attempts
         if submit_code.is_a? String
           return :less_then_four   if submit_code.size < 4
@@ -40,8 +40,8 @@ module DkCodebreaker
     end
 
     def hint
-      unless @hint
-        send = "****"
+      unless @hint_status
+        send = '****'
         num = rand(0..3)
         send[num] = @secret_code[num]
         @hint_status = true
@@ -55,7 +55,7 @@ module DkCodebreaker
           result: @last_result,
           attempt: @attempt,
           attempts: @attempts,
-          time: Time.new.strftime("%m/%d/%Y/%H/%M")
+          time: Time.new.strftime('%m/%d/%Y/%H/%M')
       }
     end
 
@@ -66,13 +66,13 @@ module DkCodebreaker
     end
 
     def position_eq
-      submits = @submit_code.split("")
-      secrets = @secret_code.split("")
-      answer  = ""
+      submits = @submit_code.split('')
+      secrets = @secret_code.split('')
+      answer  = ''
 
       submits.each_with_index do |submit,index|
         if submit == secrets[index]
-          answer  << "+"
+          answer  << '+'
           submits[index] = nil
           secrets[index] = nil 
         end        
@@ -81,10 +81,10 @@ module DkCodebreaker
       [answer, submits, secrets]
     end
 
-    def numbers_eq array
+    def numbers_eq(array)
       array[1].each do |submit| #submits
         next if submit == nil
-        array[0] << "-" if array[2].include?(submit)
+        array[0] << '-' if array[2].include?(submit)
       end
       array[0]
     end
